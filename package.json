@@ -1,0 +1,26 @@
+{
+    "name": "knexjs-sample-app",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/deep0892/knexjs-sample-app.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/deep0892/knexjs-sample-app/issues"
+    },
+    "homepage": "https://github.com/deep0892/knexjs-sample-app#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "knex": "^0.21.1",
+        "nodemon": "^2.0.4",
+        "pg": "^8.2.1"
+    }
+}
