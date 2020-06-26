@@ -5,7 +5,13 @@ const db = require('./../../database');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    db.select().from('todo').then(data => {
+    db.select().from('todo').orderBy('id').then(data => {
+        res.send(data);
+    });
+});
+
+router.get('/:id', (req, res) => {
+    db('todo').where({ id: req.params.id }).select().then(data => {
         res.send(data);
     });
 });
@@ -28,6 +34,12 @@ router.put('/:id', (req, res) => {
 router.patch('/:id', (req, res) => {
     db('todo').where({ id: req.params.id }).update(req.body).returning('*').then(data => {
         res.send(data);
+    });
+});
+
+router.delete('/:id', (req, res) => {
+    db('todo').where({ id: req.params.id }).del().then(data => {
+        res.send({ success: true });
     });
 });
 
