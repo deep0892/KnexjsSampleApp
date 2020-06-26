@@ -10,4 +10,10 @@ router.get('/', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    db.insert(req.body).returning('*').into('todo').then(data => {
+        res.send(data);
+    });
+});
+
 module.exports = router;
